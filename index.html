@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Texas Department of Public Safety | ER:LC Roleplay</title>
+<meta name="description" content="Texas Department of Public Safety — a professional law enforcement roleplay community for Emergency Response: Liberty County (ER:LC). Apply, get support, and follow department updates.">
+
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Scroll progress bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Radio static / scanline overlay for texture -->
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-utility">
+    <span class="header-utility-dot" aria-hidden="true"></span>
+    <span>Unofficial ER:LC roleplay community &mdash; not affiliated with the State of Texas</span>
+  </div>
+  <div class="nav-wrap">
+    <a href="#top" class="brand">
+      <img src="assets/dps-seal.png" alt="Texas Department of Public Safety Seal" class="brand-seal">
+      <span class="brand-text">
+        <strong>Texas Department</strong>
+        <em>of Public Safety</em>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#mission" data-nav="mission">Mission</a>
+      <a href="#access" data-nav="access">Get Involved</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScjb6KXQup-ygfIYgcGrsDUpvM_2Q6fTeWx7H3HaOoUQKMGhA/viewform" target="_blank" rel="noopener" class="nav-cta">Apply Now</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <canvas id="starfield" class="starfield-canvas" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+    <div class="hero-badge-glow" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-columns">
+        <div class="seal-frame">
+          <div class="seal-inner">
+            <div class="seal-ring"></div>
+            <img src="assets/dps-seal.png" alt="Texas Department of Public Safety Seal" class="hero-seal">
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <p class="eyebrow">Dept. Bulletin &middot; Emergency Response: Liberty County</p>
+          <h1 class="hero-title">Texas Department<br><span>of Public Safety</span></h1>
+
+          <div class="motto-ribbon" aria-label="Department motto">
+            <span>Courtesy</span>
+            <i></i>
+            <span>Service</span>
+            <i></i>
+            <span>Protection</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScjb6KXQup-ygfIYgcGrsDUpvM_2Q6fTeWx7H3HaOoUQKMGhA/viewform" target="_blank" rel="noopener" class="btn btn-primary">
+              <span>Apply Now</span>
+            </a>
+            <a href="https://discordapp.com/channels/1532879583685120211/1533186341334941797" target="_blank" rel="noopener" class="btn btn-ghost">
+              <span>Get Support</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#mission" class="scroll-cue" aria-label="Scroll to content">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ===================== DISPATCH TICKER ===================== -->
+  <div class="ticker" aria-hidden="true">
+    <span class="ticker-label">CAD&nbsp;/&nbsp;DISPATCH</span>
+    <div class="ticker-track">
+      <span>10-4 ROSTER OPEN, APPLICATIONS ACCEPTED &mdash;</span>
+      <span>ALL UNITS: COURTESY / SERVICE / PROTECTION &mdash;</span>
+      <span>DEPARTMENT UPDATES POSTED, SEE BULLETIN &mdash;</span>
+      <span>LIBERTY COUNTY PATROL DIVISIONS ACTIVE &mdash;</span>
+      <span>10-4 ROSTER OPEN, APPLICATIONS ACCEPTED &mdash;</span>
+      <span>ALL UNITS: COURTESY / SERVICE / PROTECTION &mdash;</span>
+      <span>DEPARTMENT UPDATES POSTED, SEE BULLETIN &mdash;</span>
+      <span>LIBERTY COUNTY PATROL DIVISIONS ACTIVE &mdash;</span>
+    </div>
+  </div>
+
+  <!-- ===================== MISSION ===================== -->
+  <section class="section mission" id="mission">
+    <div class="section-inner">
+      <span class="reveal section-kicker">Our Mission</span>
+      <h2 class="reveal">Protecting the Roleplay Community<br>of Liberty County</h2>
+      <p class="reveal mission-text">
+        The Texas Department of Public Safety is a professional law enforcement roleplay division
+        operating within Emergency Response: Liberty County. Our mission is to deliver realistic,
+        respectful, and immersive law enforcement roleplay — protecting the citizens of Liberty County,
+        upholding the law with integrity, and setting the standard for professionalism both on and off duty.
+        Every Trooper who wears this badge is held to the same three principles the real seal has carried
+        for generations.
+      </p>
+
+      <div class="directive">
+        <div class="directive-item reveal">
+          <span class="directive-num">I.</span>
+          <div class="directive-body">
+            <h3>Courtesy</h3>
+            <p>Every citizen and every call is met with respect, patience, and professionalism &mdash; no exceptions.</p>
+          </div>
+        </div>
+        <div class="directive-item reveal">
+          <span class="directive-num">II.</span>
+          <div class="directive-body">
+            <h3>Service</h3>
+            <p>Our Troopers respond swiftly and reliably to serve Liberty County, on duty and in the community.</p>
+          </div>
+        </div>
+        <div class="directive-item reveal">
+          <span class="directive-num">III.</span>
+          <div class="directive-body">
+            <h3>Protection</h3>
+            <p>We stand between Liberty County and harm &mdash; upholding the law fairly, firmly, and consistently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GET INVOLVED / LINKS ===================== -->
+  <section class="section access" id="access">
+    <div class="section-inner">
+      <span class="reveal section-kicker">Get Involved</span>
+      <h2 class="reveal">Join the Department</h2>
+      <p class="reveal access-lead">Everything you need to apply, get help, or stay in the loop &mdash; one click away.</p>
+
+      <div class="cards">
+        <a class="card reveal" href="https://docs.google.com/forms/d/e/1FAIpQLScjb6KXQup-ygfIYgcGrsDUpvM_2Q6fTeWx7H3HaOoUQKMGhA/viewform" target="_blank" rel="noopener">
+          <span class="card-tag">FORM 10-A</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="9" y="5" width="30" height="38" rx="3" stroke="currentColor" stroke-width="2.5"/><path d="M16 16h16M16 24h16M16 32h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Application</h3>
+          <p>Start your career with the Texas Department of Public Safety. Fill out the official department application to join our roster.</p>
+          <span class="card-link">Apply Now <i>&rarr;</i></span>
+        </a>
+
+        <a class="card reveal" href="https://discordapp.com/channels/1532879583685120211/1533186341334941797" target="_blank" rel="noopener">
+          <span class="card-tag">CHANNEL 04</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="19" stroke="currentColor" stroke-width="2.5"/><path d="M24 16v9M24 31v.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Support</h3>
+          <p>Have a question, an issue, or need help with your application or in-game roleplay? Our support channel is standing by.</p>
+          <span class="card-link">Get Support <i>&rarr;</i></span>
+        </a>
+
+        <a class="card reveal" href="https://discordapp.com/channels/1532879583685120211/1533479550267293777" target="_blank" rel="noopener">
+          <span class="card-tag">BULLETIN</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 6a13 13 0 00-13 13v6l-3 6h32l-3-6v-6a13 13 0 00-13-13z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M19 37a5 5 0 0010 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Department Updates</h3>
+          <p>Stay current with policy changes, department news, promotions, and announcements from command staff.</p>
+          <span class="card-link">View Updates <i>&rarr;</i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/dps-seal.png" alt="Texas Department of Public Safety Seal">
+      <div>
+        <strong>Texas Department of Public Safety</strong>
+        <span>Courtesy &middot; Service &middot; Protection</span>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScjb6KXQup-ygfIYgcGrsDUpvM_2Q6fTeWx7H3HaOoUQKMGhA/viewform" target="_blank" rel="noopener">Application</a>
+      <a href="https://discordapp.com/channels/1532879583685120211/1533186341334941797" target="_blank" rel="noopener">Support</a>
+      <a href="https://discordapp.com/channels/1532879583685120211/1533479550267293777" target="_blank" rel="noopener">Department Updates</a>
+    </div>
+
+    <p class="footer-disclaimer">
+      This is an unofficial fan-made roleplay community for <strong>Emergency Response: Liberty County (ER:LC)</strong> on Roblox.
+      It is not affiliated with, endorsed by, or connected to the real Texas Department of Public Safety or the State of Texas.
+      The department seal is used for roleplay purposes only.
+    </p>
+    <p class="footer-copy">&copy; <span id="year"></span> Texas Department of Public Safety &mdash; ER:LC Roleplay Division.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
