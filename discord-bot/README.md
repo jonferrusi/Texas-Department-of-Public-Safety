@@ -27,27 +27,31 @@ Copy `.env.example` to `.env` and fill in:
 
 GitHub itself only stores and version-controls this code — it doesn't run a persistent process, so pushing here doesn't make the bot come online. This repo includes a CI workflow (`.github/workflows/discord-bot-ci.yml`) that installs dependencies and type-checks/builds the bot on every push, so breakages are caught automatically, but it does not run the bot continuously.
 
-To actually run the bot 24/7, deploy the `discord-bot/` folder to a host that keeps a Node process alive. The bot already exposes a small HTTP health-check server on `$PORT`, so it deploys cleanly as a web service on either of these:
+To actually run the bot 24/7, deploy the `discord-bot/` folder to a host that keeps a Node process alive. The bot already exposes a small HTTP health-check server on `$PORT`, so it deploys cleanly as a web service.
 
-### Railway
-
-1. [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub repo** → select this repo.
-2. In the service's **Settings**, set **Root Directory** to `discord-bot`. Railway will pick up `discord-bot/railway.json` for the build/start commands automatically.
-3. In **Variables**, add `DISCORD_TOKEN`, `DISCORD_CLIENT_ID`, `DISCORD_GUILD_ID`, `ERLC_API_KEY`.
-4. Deploy. Then run `npm run register` once (see below) to register the slash commands.
-
-### Render
+### Render (free) + uptime pinger — recommended free setup
 
 This repo includes a `render.yaml` Blueprint at the repo root pointing at `discord-bot/`.
 
-1. [render.com](https://render.com) → **New** → **Blueprint** → select this repo. Render will read `render.yaml` and create the `texas-dps-discord-bot` web service on the free plan.
+1. [render.com](https://render.com) → **New** → **Blueprint** → select this repo. Render reads `render.yaml` and creates the `texas-dps-discord-bot` web service on the **free** plan.
 2. When prompted (the blueprint marks these `sync: false` so Render asks instead of storing them), enter `DISCORD_TOKEN`, `DISCORD_CLIENT_ID`, `DISCORD_GUILD_ID`, `ERLC_API_KEY`.
-3. Deploy. Then run `npm run register` once (see below) to register the slash commands.
+3. Deploy. Once live, copy the service's public URL from the Render dashboard (looks like `https://texas-dps-discord-bot.onrender.com`).
+4. Then run `npm run register` once (see below) to register the slash commands.
+
+**Render's free tier spins the service down after 15 minutes with no incoming HTTP traffic.** A Discord bot only makes outbound connections, so nothing would ping it on its own — it'd go to sleep and drop offline. Fix: keep something pinging the health-check URL from step 3.
+
+5. Sign up free at [uptimerobot.com](https://uptimerobot.com).
+6. **Add New Monitor** → Monitor Type: `HTTP(s)` → URL: your Render service URL from step 3 → Monitoring Interval: `5 minutes` (the free-plan minimum).
+7. Save. UptimeRobot will now hit the bot every 5 minutes, which keeps Render from ever spinning it down.
+
+One caveat to know about, not something to act on: Render's free plan also caps *total* free-service hours at 750/month account-wide. A single service running 24/7 uses ~720–744 hours depending on the month, which fits — but if you spin up other free Render services alongside this one, they'll draw from the same pool and could push you over.
 
 ### Other options
 
-- **Replit** (Reserved VM) — what this project was originally built for
-- Any VPS running `npm run build && npm start` under a process manager (`pm2`, `systemd`, etc.)
+- **Fly.io** — usually a couple dollars/month or less for a bot this light, no sleep behavior, no pinger needed
+- **Oracle Cloud free-tier VM** — genuinely free forever with a real always-on server, but more setup (create the VM yourself, SSH in, run the bot under `pm2`/`systemd`)
+- **Replit** (Reserved VM) or **Railway** — paid, simplest click-through setup if you'd rather pay a small amount than deal with a pinger
+- Any VPS running `npm run build && npm start` under a process manager
 
 On whichever host you pick, set the four variables above as that host's environment variables/secrets — never in a file committed to git. Slash commands only need re-registering when they change:
 
