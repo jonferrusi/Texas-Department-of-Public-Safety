@@ -9,6 +9,7 @@ index.html        Page markup
 css/styles.css     Theme, layout, animations
 js/main.js         Nav behavior, scroll effects, starfield canvas, card interactions
 assets/            Department seal + favicons
+discord-bot/       Discord bot for the ER:LC server (see discord-bot/README.md)
 ```
 
 ## Local preview

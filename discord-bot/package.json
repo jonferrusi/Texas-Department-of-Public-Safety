@@ -1,0 +1,22 @@
+{
+  "name": "fsrp-discord-bot",
+  "version": "1.0.0",
+  "description": "Florida State Roleplay ERLC Discord Bot",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node --enable-source-maps dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "build": "node build.mjs",
+    "register": "tsx src/register.ts"
+  },
+  "dependencies": {
+    "discord.js": "^14.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.27.3",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.3"
+  }
+}

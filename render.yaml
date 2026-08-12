@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: texas-dps-discord-bot
+    runtime: node
+    rootDir: discord-bot
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: DISCORD_CLIENT_ID
+        sync: false
+      - key: DISCORD_GUILD_ID
+        sync: false
+      - key: ERLC_API_KEY
+        sync: false
